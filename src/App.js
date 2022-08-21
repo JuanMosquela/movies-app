@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './app.css';
 import Movie from './components/Movie';
-import SearchIcon from "./search.svg"
+import {BiSearch} from 'react-icons/bi'
 
 function App() {  
 
@@ -11,23 +11,19 @@ function App() {
 
   const URL = "http://www.omdbapi.com/?i=tt3896198&apikey=459c19f3";
 
+  useEffect(() =>{
+    fetchData(['disney'])
+
+  },[])
+
   const fetchData = async (title) => {
     const response = await fetch(`${URL}&s=${title}`);
-    const data = await response.json(); 
-
-    
+    const data = await response.json();       
     
     setMovies(data.Search)
   }
 
-  useEffect(() =>{
-    fetchData([])
-
-  },[])
-
-  useEffect(() => {
-    fetchData()
-  },[input])
+  
 
   return (
     <div className="app">
@@ -41,11 +37,7 @@ function App() {
           value={input} 
           onChange={(e) => setInput(e.target.value)}
         />
-        <img 
-          src={SearchIcon} 
-          alt="search-icon"
-          onClick={() => fetchData(input)} 
-        />
+        <BiSearch onClick={() => fetchData(input)} style={{ color:'#a1a1a1',  fontSize:'1.6rem', cursor:'pointer' }} />
       </div>
 
       {movies?.length > 0
@@ -59,7 +51,7 @@ function App() {
           </div>
         ) : (
           <div className="empty">
-            <h2>Movies not found</h2>
+            <h2>Movies not founddd</h2>
           </div>
         )          
       }      

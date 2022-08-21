@@ -29,11 +29,9 @@ body {
 h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, .1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(249, 211, 180, 1) 0%,
+      rgba(249, 211, 180, .1) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -74,7 +72,7 @@ h1 {
   cursor: pointer;
 }
 
-/* .search button {
+/* .search-button {
   padding: 20px 40px;
   border-radius: 0.5rem;
   margin-left: 15px;
@@ -228,4 +226,8 @@ h1 {
     width: "100%";
     margin: 1rem;
   }
+}
+
+.movie-info {
+  color: #FFF;
 }
