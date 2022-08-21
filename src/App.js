@@ -45,8 +45,9 @@ function App() {
       {movies?.length > 0
         ?  (
           <div className="container">
-          {movies.map((movie) => (
+          {movies.map((movie, index) => (
             <Movie
+              key={index}
               id={movie.imdbID}              
               movie={movie} />
           ))} 
