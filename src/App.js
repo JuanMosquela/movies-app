@@ -37,7 +37,9 @@ function App() {
           value={input} 
           onChange={(e) => setInput(e.target.value)}
         />
-        <BiSearch onClick={() => fetchData(input)} style={{ color:'#a1a1a1',  fontSize:'1.6rem', cursor:'pointer' }} />
+        <BiSearch 
+          onClick={() => fetchData(input)} 
+          style={{ color:'#a1a1a1',  fontSize:'1.6rem', cursor:'pointer' }} />
       </div>
 
       {movies?.length > 0
